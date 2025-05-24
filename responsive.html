@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillCraft Technology</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: white;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      transition: background 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #00ffff;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 2s ease;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 2s ease;
+    }
+
+    .btn {
+      background: #00ffff;
+      color: black;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .features-container, .services-container, .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .feature-box, .service-box, .testimonial {
+      background: #222;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 250px;
+      transition: 0.3s ease;
+    }
+
+    .feature-box:hover, .service-box:hover, .testimonial:hover {
+      transform: translateY(-5px);
+      background: #00ffff;
+      color: black;
+    }
+
+    .testimonial {
+      font-style: italic;
+    }
+
+    #newsletter input[type="email"] {
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: none;
+      width: 250px;
+      margin-right: 10px;
+    }
+
+    #newsletter button {
+      padding: 0.8rem 1.5rem;
+      background: #00ffff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 2rem;
+      background: #000;
+      text-align: center;
+    }
+
+    /* Scroll to Top Button */
+    #topBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 18px;
+      background: #00ffff;
+      color: black;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .features-container, .services-container, .testimonials {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="logo">SkillCraft</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Build Smarter with SkillCraft</h1>
+      <p>Your tech partner for next-gen digital products.</p>
+      <a href="#features" class="btn">Explore Now</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>Core Features</h2>
+    <div class="features-container">
+      <div class="feature-box">Responsive Design</div>
+      <div class="feature-box">Clean UI/UX</div>
+      <div class="feature-box">Dark Mode Ready</div>
+      <div class="feature-box">Performance Optimized</div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+      <div class="service-box">Web Development</div>
+      <div class="service-box">Mobile App Development</div>
+      <div class="service-box">Cloud Solutions</div>
+      <div class="service-box">AI/ML Integration</div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About SkillCraft</h2>
+    <p>We are a digital agency focused on delivering scalable and reliable tech products. Our mission is to turn your ideas into reality with creative design and cutting-edge technology.</p>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">"SkillCraft transformed our vision into a successful app!" – Jane D.</div>
+      <div class="testimonial">"Reliable, fast, and creative – highly recommend them!" – Alex P.</div>
+      <div class="testimonial">"The best team we’ve worked with in years!" – Maria G.</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@skillcraft.tech</p>
+    <p>Phone: +91 98765 43210</p>
+  </section>
+
+  <section id="newsletter">
+    <h2>Subscribe to our Newsletter</h2>
+    <form>
+      <input type="email" placeholder="Your Email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SkillCraft Technology. All rights reserved.</p>
+  </footer>
+
+  <button id="topBtn" title="Go to top">Top</button>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const topBtn = document.getElementById("topBtn");
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    topBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
